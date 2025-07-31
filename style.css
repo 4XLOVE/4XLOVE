@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; background: #f7faff; margin: 0; text-align: center; }
+header { background: #007bff; color: white; padding: 20px; }
+h1 { margin: 0; }
+.tools { display: grid; grid-template-columns: 1fr; gap: 10px; padding: 20px; }
+.tool-card { display: block; background: white; border-radius: 5px; padding: 15px; color: #007bff; text-decoration: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.tool-card:hover { background: #e8f0ff; }
+.disabled { background: #ddd; pointer-events: none; color: #555; }
+footer { background: #007bff; color: white; padding: 10px; margin-top: 20px; }
