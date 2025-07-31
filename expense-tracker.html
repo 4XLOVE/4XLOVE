@@ -1,0 +1,27 @@
+import React, { useState } from "react";
+
+export default function ExpenseTracker() {
+  // স্টেট ডিক্লেয়ারেশন
+  const [expenses, setExpenses] = useState([]);
+  const [input, setInput] = useState("");
+
+  // খরচ যোগ করার ফাংশন
+  const addExpense = () => {
+    if (input) setExpenses([...expenses, input]);
+    setInput("");
+  };
+
+  // রেন্ডার অংশ
+  return (
+    <div>
+      <h2>💰 Daily Expense Tracker</h2>
+      <input 
+        value={input} 
+        onChange={e => setInput(e.target.value)} 
+        placeholder="Enter expense..." 
+      />
+      <button onClick={addExpense}>Add</button>
+      <ul>{expenses.map((e,i) => <li key={i}>{e}</li>)}</ul>
+    </div>
+  );
+}
