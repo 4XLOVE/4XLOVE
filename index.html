@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4XLOVE - All in One Daily Tools</title>
+  <style>
+    :root {
+      --primary-color: #1e90ff;
+      --secondary-color: #e6f0ff;
+      --text-color: #333;
+      --light-text: #fff;
+      --card-bg: white;
+      --shadow: 0 2px 5px rgba(0,0,0,0.1);
+      --hover-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    
+    body { 
+      font-family: 'Segoe UI', Arial, sans-serif; 
+      margin:0; 
+      background:#f7f9fc; 
+      color:var(--text-color);
+      line-height:1.6;
+    }
+    
+    header { 
+      background:var(--primary-color); 
+      padding:15px 20px; 
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center; 
+      color:var(--light-text);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    header h1 { 
+      margin:0; 
+      font-size:24px; 
+      font-weight: 700;
+    }
+    
+    nav a { 
+      color:var(--light-text); 
+      text-decoration:none; 
+      margin:0 10px; 
+      font-weight:600;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    .hero { 
+      text-align:center; 
+      padding:60px 20px; 
+      background:var(--secondary-color); 
+      background: linear-gradient(135deg, var(--secondary-color) 0%, #d4e4fa 100%);
+    }
+    
+    .hero h2 { 
+      font-size:2.5rem; 
+      margin-bottom:15px; 
+      color: var(--primary-color);
+    }
+    
+    .hero p { 
+      font-size:1.2rem; 
+      margin-bottom:25px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero button, .tool-card button { 
+      background:var(--primary-color); 
+      color:white; 
+      border:none; 
+      padding:12px 25px; 
+      border-radius:8px; 
+      cursor:pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+    
+    .hero button:hover, .tool-card button:hover {
+      background: #187bcd;
+      transform: translateY(-2px);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .search { 
+      display:flex; 
+      justify-content:center; 
+      margin:30px 0; 
+      padding: 0 20px;
+    }
+    
+    .search input { 
+      width:60%; 
+      max-width: 600px;
+      padding:12px 20px; 
+      border:1px solid #ddd; 
+      border-radius:30px; 
+      font-size: 1rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .search input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.2);
+    }
+    
+    section { 
+      padding:30px 20px; 
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h3 { 
+      color:var(--primary-color); 
+      margin-bottom:15px; 
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    section p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+    
+    .tools-grid { 
+      display:grid; 
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); 
+      gap:20px;
+    }
+    
+    .tool-card { 
+      background:var(--card-bg); 
+      padding:20px; 
+      border-radius:10px; 
+      box-shadow:var(--shadow); 
+      transition:all 0.3s;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .tool-card:hover { 
+      transform:translateY(-5px); 
+      box-shadow:var(--hover-shadow); 
+    }
+    
+    .tool-card h4 {
+      margin: 0 0 10px 0;
+      color: var(--primary-color);
+    }
+    
+    .tool-card p {
+      margin: 0 0 15px 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .tool-card button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+    
+    footer { 
+      background:var(--primary-color); 
+      color:var(--light-text); 
+      text-align:center; 
+      padding:25px 15px; 
+      margin-top:40px;
+    }
+    
+    footer p {
+      margin: 5px 0;
+    }
+    
+    footer a { 
+      color:var(--light-text); 
+      margin:0 10px; 
+      text-decoration:none;
+      transition: opacity 0.3s;
+    }
+    
+    footer a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+    
+    .footer-links {
+      margin: 15px 0;
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .search input {
+        width: 80%;
+      }
+      
+      .tools-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>4XLOVE</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#tools">Tools</a>
+    <a href="#expense">Expense Tracker</a>
+    <a href="mailto:4xlovem@gmail.com">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Your Daily Tools, All in One Place</h2>
+  <p>Track expenses, convert units, calculate loans, and simplify your everyday tasks — fast, free, and easy to use.</p>
+  <button onclick="location.href='#tools'">Explore Tools</button>
+</div>
+
+<div class="search">
+  <input type="text" placeholder="Search a tool..." id="searchInput" />
+</div>
+
+<!-- 🧮 Daily Expense Tracker Section -->
+<section id="expense">
+  <h3>💰 Daily Expense Tracker</h3>
+  <p>Manage your daily spending with multi-currency support, categorization, and export options.</p>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <h4>Expense Tracker</h4>
+      <p>Track, analyze & export your daily expenses with detailed reports.</p>
+      <button>Use Tool</button>
+    </div>
+    <div class="tool-card">
+      <h4>Budget Planner</h4>
+      <p>Set monthly budgets and track your spending against goals.</p>
+      <button>Coming Soon</button>
+    </div>
+  </div>
+</section>
+
+<!-- 🧰 Multiple Tools -->
+<section id="tools">
+  <h3>🧰 Multi-Utility Tools</h3>
+  <p>All-in-one online tools to make your life easier. More tools added regularly!</p>
+
+  <div class="tools-grid">
+    <div class="tool-card"><h4>Currency Converter</h4><p>Real-time currency exchange rates with historical data.</p><button>Use Tool</button></div>
+    <div class="tool-card"><h4>Loan EMI Calculator</h4><p>Calculate your loan repayments with amortization schedule.</p><button>Use Tool</button></div>
+    <div class="tool-card"><h4>QR Code Generator</h4><p>Create & customize QR codes for URLs, contacts, and more.</p><button>Use Tool</button></div>
+    <div class="tool-card"><h4>PDF to Word</h4><p>Convert PDF files to editable Word documents.</p><button>Use Tool</button></div>
+    <div class="tool-card"><h4>Image Converter</h4><p>Convert images between JPG, PNG, WEBP, and other formats.</p><button>Use Tool</button></div>
+    <div class="tool-card"><h4>Unit Converter</h4><p>Convert weight, distance, volume, temperature and more.</p><button>Use Tool</button></div>
+    <div class="tool-card"><h4>Text Encryptor</h4><p>Secure your text with AES encryption and password protection.</p><button>Use Tool</button></div>
+    <div class="tool-card"><h4>Color Picker</h4><p>Pick, convert and get color codes in HEX, RGB, HSL formats.</p><button>Use Tool</button></div>
+    <div class="tool-card"><h4>Age Calculator</h4><p>Calculate age in years, months, days from birth date.</p><button>Coming Soon</button></div>
+    <div class="tool-card"><h4>BMI Calculator</h4><p>Calculate your Body Mass Index and health recommendations.</p><button>Coming Soon</button></div>
+    <div class="tool-card"><h4>Password Generator</h4><p>Create strong, secure passwords with customizable options.</p><button>Coming Soon</button></div>
+    <div class="tool-card"><h4>Time Zone Converter</h4><p>Convert between time zones for scheduling meetings.</p><button>Coming Soon</button></div>
+  </div>
+</section>
+
+<footer>
+  <p>4XLOVE - Simplifying your digital life.</p>
+  <p>Contact: <a href="mailto:4xlovem@gmail.com">4xlovem@gmail.com</a></p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a> | 
+    <a href="#">Terms of Use</a> | 
+    <a href="#">About Us</a> | 
+    <a href="#">Blog</a>
+  </div>
+  <p>&copy; 2023 4XLOVE. All rights reserved.</p>
+</footer>
+
+<script>
+  // Simple search functionality
+  document.getElementById('searchInput').addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const toolCards = document.querySelectorAll('.tool-card');
+    
+    toolCards.forEach(card => {
+      const title = card.querySelector('h4').textContent.toLowerCase();
+      const description = card.querySelector('p').textContent.toLowerCase();
+      
+      if (title.includes(searchTerm) || description.includes(searchTerm)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
